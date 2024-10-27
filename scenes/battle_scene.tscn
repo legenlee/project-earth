@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf2cek2yuo3kl"]
+
+[ext_resource type="Script" path="res://scenes/battle_scene.gd" id="1_8llrh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qjjq2"]
+size = Vector3(10, 2, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_754e6"]
+size = Vector3(10, 2, 4)
+
+[node name="BattleScene" type="Node"]
+script = ExtResource("1_8llrh")
+
+[node name="Field" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="Field"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Field/Floor"]
+shape = SubResource("BoxShape3D_qjjq2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Field/Floor"]
+mesh = SubResource("BoxMesh_754e6")
+
+[node name="Wall" type="StaticBody3D" parent="Field"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Field/Wall"]
+shape = SubResource("BoxShape3D_qjjq2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Field/Wall"]
+mesh = SubResource("BoxMesh_754e6")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 2)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
