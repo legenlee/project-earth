@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="Project Earth"
+config/version="0.0.1"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[gui]
+
+theme/custom_font="res://assets/fonts/main_medium.ttf"
+
+[internationalization]
+
+locale/locale_filter_mode=0
 
 [rendering]
 

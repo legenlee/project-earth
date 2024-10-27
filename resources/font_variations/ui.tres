@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://d1hlrl1u6wlff"]
+
+[ext_resource type="FontFile" uid="uid://bvb88vl7mrjkg" path="res://assets/fonts/main_medium.ttf" id="1_3krip"]
+
+[resource]
+base_font = ExtResource("1_3krip")
